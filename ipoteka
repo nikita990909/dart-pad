@@ -1,0 +1,30 @@
+void main() {
+  var initial = 0.2;
+  var initialTxt = (initial*100).round();
+  var procent = 0.1499;
+  var procentTxt = (procent*100).round();
+  var money = 30000000;
+  var year = 15;
+  var month = year*12;
+  var firstMoney = money*initial;
+  double pay = 0;
+  double credit = money-firstMoney;
+  pay = credit*procent*year;
+  var payMonth = pay/month;
+  pay += firstMoney;
+  var difference = pay-money;
+  var payTxt = pay.round();
+  var differenceTxt = difference.round();
+  var payMonthTxt = payMonth.round();
+  var procentDifference = difference*100/(money-money*initial);
+  var procentDifferenceTxt = procentDifference.round();
+  print('Стоимость объекта:                     $moneyтг.');
+  print('Ставка ипотеки:                        $procentTxt% (годовых)');
+  print('Первоначальный взнос:                  $firstMoneyтг. ($initialTxt%)');
+  print('Сумма ипотеки:                         $creditтг.');
+  print('--------------------------------------');
+  print('За срок в $year лет ($month месяцев):');
+  print('     * Ежемесячный платёж составит:    $payMonthTxtтг.');
+  print('     * Полные затраты составят:        $payTxtтг.');
+  print('     * Переплата составит:             $differenceTxtтг. ($procentDifferenceTxt% от суммы ипотеки)');
+}
