@@ -19,6 +19,23 @@ void main() {
       "\$");
 }
 
+double minutes(var time) => time*60;
+
+String time(double time){
+  var res = '';
+  var hours = 0;
+  double minutes = 0;
+  while (time>=60){
+    hours++;
+    time -= 60;
+  }
+  minutes = time;
+  minutes.floor();
+  res += '$hours час(а/ов) $minutes минут(а)';
+  return res;
+}
+
+
 String hello(String name) => 'Приветствую, $name';
 
 int random(int n) => Random().nextInt(n);
