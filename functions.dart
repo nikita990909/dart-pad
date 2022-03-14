@@ -14,7 +14,7 @@ void main() {
       numStr(accumulation(monthPay, month, procent).floor()) +
       'тг.' +
       " или ~" +
-      numStr(transferMoney(accumulation(monthPay, month, procent).floor(), curs)
+      numStr(transferMoneyUsdToTg(accumulation(monthPay, month, procent).floor(), curs)
           .floor()) +
       "\$");
 }
@@ -23,8 +23,13 @@ String hello(String name) => 'Приветствую, $name';
 
 int random(int n) => Random().nextInt(n);
 
-int transferMoney(int money, double curs) {
+int transferMoneyUsdToTg(int money, double curs) {
   double result = money / curs;
+  return result.floor();
+}
+
+int transferMoneyTgToUsd(int money, double curs) {
+  double result = money * curs;
   return result.floor();
 }
 
